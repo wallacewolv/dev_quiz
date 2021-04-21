@@ -1,3 +1,4 @@
+import 'package:DevQuiz/challenge/widgtes/question_indicator/question_indicator_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
@@ -11,7 +12,15 @@ class _ChallengePageState extends State<ChallengePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Scaffold(),
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60),
+          child: SafeArea(
+            top: true,
+            child: QuestionIndicatorWidget(),
+          ),
+        ),
+      ),
     );
   }
 }
