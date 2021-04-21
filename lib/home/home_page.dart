@@ -1,5 +1,6 @@
-import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
+import 'package:DevQuiz/home/widgets/level_button/level_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
+      body: LevelButtonWidget(
+        label: "Fácil",
+      ),
     );
   }
 }
