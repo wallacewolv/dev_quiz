@@ -19,18 +19,16 @@ class QuizWidget extends StatelessWidget {
             height: 24,
           ),
           AwnserWidget(
-            isRight: false,
-            isSelected: true,
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
-          ),
-          AwnserWidget(
-            title:
-                "Possibilita a criação de aplicativos compilados nativamente",
-          ),
-          AwnserWidget(
             isRight: true,
             isSelected: true,
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente",
+          ),
+          AwnserWidget(
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente",
+          ),
+          AwnserWidget(
             title:
                 "Possibilita a criação de aplicativos compilados nativamente",
           ),
