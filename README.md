@@ -25,9 +25,9 @@
 
 <h3 align="center">DevQuiz</h3>
 
-<p>Your quiz app where, where the answer takes you to evaluate and understand your knowledge within a programming language.</p>
+<p align="center">Your quiz app where, where the answer takes you to evaluate and understand your knowledge within a programming language.</p>
 <br>
-<p>Initially developed for quizzes about Flutter. DevQuiz was developed with the Rocketseat team at the NLW 5 event with instructor Gabu Dev.</p>
+<p align="center">Initially developed for quizzes about Flutter. DevQuiz was developed with the Rocketseat team at the NLW 5 event.</p>
 <br>
 
 ## :sparkles: Features (Initials) ##
