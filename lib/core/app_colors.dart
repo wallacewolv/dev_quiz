@@ -13,6 +13,8 @@ class AppColors {
   //Overlay Button
   static final Color lightGreyOverlay = Color(0xFFE3E9E9);
   static final Color darkGreenOverlay = Color(0xFF08AD52);
+  static final Color purpleOverlay = Color(0xFF5B30C0);
+  static final Color transparentOverlay = Color(0xFFE9E8E8);
 
   //Greens
   static final Color lightGreen = Color(0xFFE1F5EC);

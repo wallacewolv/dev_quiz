@@ -1,5 +1,7 @@
 import 'package:DevQuiz/challenge/widgtes/awnser/awnser_widget.dart';
 import 'package:DevQuiz/core/core.dart';
+import 'package:DevQuiz/error/error_page.dart';
+import 'package:DevQuiz/hit/hit_page.dart';
 import 'package:DevQuiz/shared/models/awnser_model.dart';
 import 'package:DevQuiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,22 @@ class _QuizWidgetState extends State<QuizWidget> {
                 setState(() {});
                 Future.delayed(Duration(seconds: 1))
                     .then((value) => widget.onChange());
+                // ignore: unrelated_type_equality_checks
+                if (indexSelected != awnser(i)) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ErrorPage(),
+                    ),
+                  );
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HitPage(),
+                    ),
+                  );
+                }
               },
             ),
         ],
