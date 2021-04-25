@@ -27,13 +27,13 @@ class HitPage extends StatelessWidget {
                 ),
                 Text.rich(
                   TextSpan(
-                    text: "É um kit de desenvolvimento de ",
+                    text: "Show de bola!",
                     style: AppTextStyles.body,
                     children: [
-                      TextSpan(
-                        text: "\ninterface de usuário",
-                        style: AppTextStyles.body,
-                      ),
+                      // TextSpan(
+                      //   text: "\ninterface de usuário",
+                      //   style: AppTextStyles.body,
+                      // ),
                     ],
                   ),
                   textAlign: TextAlign.center,

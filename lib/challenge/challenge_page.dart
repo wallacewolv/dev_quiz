@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
-  ChallengePage({Key? key, required this.questions}) : super(key: key);
+  final String title;
+
+  ChallengePage({
+    Key? key,
+    required this.questions,
+    required this.title,
+  }) : super(key: key);
 
   @override
   _ChallengePageState createState() => _ChallengePageState();
@@ -34,6 +40,13 @@ class _ChallengePageState extends State<ChallengePage> {
       );
   }
 
+  void onSelectd(bool value) {
+    if (value) {
+      controller.qtdAnwserRight++;
+    }
+    nextPage();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +59,10 @@ class _ChallengePageState extends State<ChallengePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(
-                  padding: EdgeInsets.only(left: 15, top: 15),
+                  padding: EdgeInsets.only(
+                    left: 15,
+                    top: 15,
+                  ),
                   icon: Icon(Icons.close),
                   onPressed: () {
                     Navigator.pop(context);
@@ -76,7 +92,7 @@ class _ChallengePageState extends State<ChallengePage> {
                 .map(
                   (e) => QuizWidget(
                     question: e,
-                    onChange: nextPage,
+                    onSelected: onSelectd,
                   ),
                 )
                 .toList(),
@@ -107,10 +123,14 @@ class _ChallengePageState extends State<ChallengePage> {
                       child: NextButtonWidget.green(
                         label: "Confirmar",
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ResultPage(),
+                              builder: (context) => ResultPage(
+                                title: widget.title,
+                                lenght: widget.questions.length,
+                                result: controller.qtdAnwserRight,
+                              ),
                             ),
                           );
                         },
