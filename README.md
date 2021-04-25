@@ -52,7 +52,7 @@ The following tools were used in this project:
 ## :white_check_mark: Dependencies ##
 
 The following dependencies were used in this project:
-- [Cupertino Icons](https://pub.dev/packages/cupertino_icons))
+- [Cupertino Icons](https://pub.dev/packages/cupertino_icons)
 - [Google Fonts](https://pub.dev/packages/google_fonts)
 - [Share Plus](https://pub.dev/packages/share)
 
