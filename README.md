@@ -50,7 +50,7 @@ The following tools were used in this project:
 - [Flutter 2.0](https://events.flutter.dev/)
 - [Power Shell 5.0](https://docs.microsoft.com/pt-br/skypeforbusiness/set-up-your-computer-for-windows-powershell/download-and-install-windows-powershell-5-1)
 
-## :check_mark: Dependencies ##
+## :white_check_mark: Dependencies ##
 
 The following dependencies were used in this project:
 - [Cupertino Icons](https://pub.dev/packages/cupertino_icons))
