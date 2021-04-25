@@ -22,6 +22,15 @@ class _ChallengePageState extends State<ChallengePage> {
     pageController.addListener(() {
       controller.currentPage = pageController.page!.toInt() + 1;
     });
+    super.initState();
+  }
+
+  void nextPage() {
+    if (controller.currentPage < widget.questions.length)
+      pageController.nextPage(
+        duration: Duration(milliseconds: 200),
+        curve: Curves.linearToEaseOut,
+      );
   }
 
   @override
@@ -62,37 +71,47 @@ class _ChallengePageState extends State<ChallengePage> {
                 NeverScrollableScrollPhysics(), // Bloquei de mudar a tela arrastando o dedo para o lado só
             controller: //                      // sendo possivel atraves dos botões Pular ou Confirmar.
                 pageController,
-            children:
-                widget.questions.map((e) => QuizWidget(question: e)).toList(),
+            children: widget.questions
+                .map(
+                  (e) => QuizWidget(
+                    question: e,
+                    onChange: nextPage,
+                  ),
+                )
+                .toList(),
           ),
         ),
         bottomNavigationBar: SafeArea(
           bottom: true,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: NextButtonWidget.white(
-                    label: "Pular",
-                    onTap: () {
-                      pageController.nextPage(
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.linearToEaseOut);
-                    },
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: NextButtonWidget.green(
-                    label: "Confirmar",
-                    onTap: () {},
-                  ),
-                ),
-              ],
+            child: ValueListenableBuilder<int>(
+              valueListenable: controller.currentPageNotifier,
+              builder: (context, value, _) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  if (value < widget.questions.length)
+                    Expanded(
+                      child: NextButtonWidget.white(
+                        label: "Pular",
+                        onTap: nextPage,
+                      ),
+                    ),
+                  // if (value == widget.questions.length)
+                  //   SizedBox(
+                  //     width: 10,
+                  //   ),
+                  if (value == widget.questions.length)
+                    Expanded(
+                      child: NextButtonWidget.green(
+                        label: "Confirmar",
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
         ),
