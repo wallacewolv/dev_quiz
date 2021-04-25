@@ -1,6 +1,5 @@
 import 'package:DevQuiz/challenge/widgtes/next_button/next_button_widget.dart';
 import 'package:DevQuiz/core/core.dart';
-import 'package:DevQuiz/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class HitPage extends StatelessWidget {

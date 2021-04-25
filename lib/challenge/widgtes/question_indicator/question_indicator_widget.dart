@@ -26,7 +26,7 @@ class QuestionIndicatorWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Questão ${currentPage} ",
+                    "Questão $currentPage ",
                     style: AppTextStyles.body,
                   ),
                 ],
